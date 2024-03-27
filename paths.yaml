@@ -1,0 +1,52 @@
+base: 
+  - base.csv
+0:
+  static:
+    - static_0_0.csv
+    - static_0_1.csv
+  static_cb:
+    - static_cb_0.csv
+1:
+  applprev:
+    - applprev_1_0.csv
+    - applprev_1_1.csv
+  credit_bureau_a:
+    - credit_bureau_a_1_0.csv
+    - credit_bureau_a_1_1.csv
+    - credit_bureau_a_1_2.csv
+    - credit_bureau_a_1_3.csv
+  credit_bureau_b:
+    - credit_bureau_b_1.csv
+  debitcard:
+    - debitcard_1.csv
+  deposit:
+    - deposit_1.csv
+  other:
+    - other_1.csv
+  person:
+    - person_1.csv
+  tax_registry_a:
+    - tax_registry_a_1.csv
+  tax_registry_b:
+    - tax_registry_b_1.csv
+  tax_registry_c:
+    - tax_registry_c_1.csv
+2:
+  applprev:
+    - applprev_2.csv
+  credit_bureau_a:
+    - credit_bureau_a_2_0.csv
+    - credit_bureau_a_2_1.csv
+    - credit_bureau_a_2_2.csv
+    - credit_bureau_a_2_3.csv
+    - credit_bureau_a_2_4.csv
+    - credit_bureau_a_2_5.csv
+    - credit_bureau_a_2_6.csv
+    - credit_bureau_a_2_7.csv
+    - credit_bureau_a_2_8.csv
+    - credit_bureau_a_2_9.csv
+    - credit_bureau_a_2_10.csv
+  credit_bureau_b:
+    - credit_bureau_b_2.csv
+  person:
+    - person_2.csv
