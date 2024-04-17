@@ -1,6 +1,5 @@
 data/
-inputs*
-outputs*
-submission.csv
 .env
+*.pyc
+submission.csv
 .DS_Store
