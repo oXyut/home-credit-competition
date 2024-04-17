@@ -1,3 +1,5 @@
 data/
 .env
 *.pyc
+submission.csv
+.DS_Store
