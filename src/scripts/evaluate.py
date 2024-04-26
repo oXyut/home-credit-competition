@@ -68,7 +68,7 @@ class Evaluator:
         _, ax = plt.subplots()
         ax.scatter(gini_per_week['WEEK_NUM'], gini_per_week['gini'], alpha=0.5, label='Gini coefficient')
         ax.plot(
-            a * gini_per_week['WEEK_NUM'] + b,
+            a * np.arange(0, 92) + b,
             label=f'y = {a:.4f}x + {b:.4f}',
             color='tab:orange'
         )
