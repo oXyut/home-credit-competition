@@ -181,6 +181,7 @@ class Evaluator:
         self.y_true = y_true
         self.y_pred = y_pred
         self.save_path = save_path
+        self.save_name = self.save_path.name if self.save_path else None
 
 
     def plot_pred(self, is_log:bool=False)->None:
@@ -192,6 +193,7 @@ class Evaluator:
         if is_log:
             ax.set_yscale('log')
         if self.save_path:
+            ax.set_title(self.save_name)
             plt.savefig(Path.joinpath(self.save_path, 'hist_pred.png'))
         plt.show()
 
@@ -200,6 +202,7 @@ class Evaluator:
         fig, ax = plt.subplots()
         ax.plot(fpr, tpr, label=f'ROC curve (AUC = {auc(fpr, tpr):.2f})')
         ax.plot([0, 1], [0, 1], linestyle='--', color='k', label='Random')
+        ax.set_title(self.save_name)
         ax.set_xlabel('False Positive Rate')
         ax.set_ylabel('True Positive Rate')
         ax.legend()
@@ -232,11 +235,12 @@ class Evaluator:
             linear_regression.predict(np.arange(0, 92).reshape(-1, 1)),
             label=f'y = {a:.4f}x + {b:.4f}'
         )
+        ax.text(0, 0.9, f'stability: {stability:.4f}')
         ax.set(
+            title=self.save_name,
             xlabel='WEEK_NUM',
             ylabel='Gini coefficient',
             ylim=[0, 1],
-            title='stability: {:.4f}'.format(stability)
         )
         ax.legend()
         if self.save_path:
