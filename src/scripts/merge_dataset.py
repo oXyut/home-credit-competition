@@ -160,12 +160,17 @@ def merge_dataset(
         L_aggs.append((pl.col(col1) - pl.col(col2)).alias(f'diff_{col1}_{col2}'))
         L_aggs.append((pl.col(col1) + pl.col(col2)).alias(f'sum_{col1}_{col2}'))
 
-    base_data = base_data.with_columns([*P_aggs, *A_aggs, *L_aggs])
+    base_data = base_data.with_columns(*A_aggs)
 
     '''
     process date_decision
     '''
     base_data = base_data.pipe(process_date)
+
+    '''
+    process date features
+    '''
+    #base_data = process_date_features(base_data)
 
     '''
     convert polars DataFrame into pandas DataFrame
